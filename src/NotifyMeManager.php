@@ -11,14 +11,14 @@
 
 namespace NotifyMeHQ\Manager;
 
-use NotifyMeHQ\NotifyMe\ManagerInterface;
+use NotifyMeHQ\Contracts\ManagerInterface;
 
 class NotifyMeManager implements ManagerInterface
 {
     /**
      * The active connection instances.
      *
-     * @var \NotifyMeHQ\NotifyMe\GatewayInterface[]
+     * @var \NotifyMeHQ\Contracts\GatewayInterface[]
      */
     protected $connections = [];
 
@@ -27,7 +27,7 @@ class NotifyMeManager implements ManagerInterface
      *
      * @param string|null $name
      *
-     * @return \NotifyMeHQ\NotifyMe\GatewayInterface
+     * @return \NotifyMeHQ\Contracts\GatewayInterface
      */
     public function connection($name = null)
     {
@@ -39,7 +39,7 @@ class NotifyMeManager implements ManagerInterface
      *
      * @param string|null $name
      *
-     * @return \NotifyMeHQ\NotifyMe\GatewayInterface
+     * @return \NotifyMeHQ\Contracts\GatewayInterface
      */
     public function reconnect($name = null)
     {
@@ -95,7 +95,7 @@ class NotifyMeManager implements ManagerInterface
     /**
      * Return all of the created connections.
      *
-     * @return \NotifyMeHQ\NotifyMe\GatewayInterface[]
+     * @return \NotifyMeHQ\Contracts\GatewayInterface[]
      */
     public function getConnections()
     {
